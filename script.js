@@ -47,3 +47,26 @@ Player2.sayName();
 
 player1.getMarker();
 Player2.getMarker();
+
+//library exercise
+
+function bookInformation(title, author, pages, alreadyRead) {
+  this.title = title;
+  this.author = author;
+  this.pages = pages;
+  this.alreadyRead = alreadyRead;
+  this.showInformation = function () {
+    let resultString = `The book ${title} by ${author} has ${pages} and it is ${alreadyRead} that you already read the book.`; //best pratice to return the function and cosnole log it after calling the function
+
+    return resultString;
+    /*  console.log(
+      `The book ${title} by ${author} has ${pages} and it is ${alreadyRead} that you already read the book.`
+    );*/
+  };
+}
+
+const info = new bookInformation("Harry Potter", "J.K Rowling", "500", "true"); // calling the object constructor with new keyword
+info.showInformation(); //callling the fucntion defined inside the constructor by using the object
+console.log(info.showInformation()); //logging
+
+//info.bookInformation();//totally wrong. bookInformation is not a function because it is an object constructor, i need to define a function inside the constructor and call it
